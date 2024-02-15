@@ -1,0 +1,29 @@
+---
+
+const { pageTitle } = Astro.props;
+
+---
+
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{pageTitle}</title>
+
+  </head>
+  <body>
+    <nav>
+      <a href="#">O mnie</a>
+      <a href="#">Cennik</a>
+      <a href="#">Kontakt</a>
+    </nav>
+ 
+    <main>
+        <slot />
+    </main>
+
+    <!-- Insert footer when ready -->
+    <!-- <Footer /> -->
+  </body>
+</html>
