@@ -1,4 +1,5 @@
 ---
+import {SiteHeader} from '../components/SiteHeader.tsx'
 
 const { pageTitle } = Astro.props;
 
@@ -13,11 +14,14 @@ const { pageTitle } = Astro.props;
 
   </head>
   <body>
-    <nav>
+    <!-- <nav>
       <a href="#">O mnie</a>
       <a href="#">Cennik</a>
       <a href="#">Kontakt</a>
-    </nav>
+    </nav> -->
+
+    <SiteHeader client:load  />
+    
  
     <main>
         <slot />
