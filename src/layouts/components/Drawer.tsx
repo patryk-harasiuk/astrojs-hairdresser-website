@@ -1,7 +1,9 @@
 import type { ReactNode } from 'react';
 import ReactFocusLock from 'react-focus-lock';
-import { useEscapeKey } from '../hooks/useEscapeKey';
+import { useEscapeKey } from '../../hooks/useEscapeKey';
 import { Portal } from './Portal';
+import { CloseSVG } from './CloseSVG';
+import VisuallyHidden from '../../components/VisuallyHidden';
 
 type Props = {
   children: ReactNode;
@@ -16,14 +18,16 @@ export const Drawer = ({ children, handleDismiss }: Props) => {
       <ReactFocusLock returnFocus={true}>
         <div className="fixed inset-0 p-4">
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fadeIn">
-            <div className="absolute top-0 right-0 bottom-0 w-1/2 max-w-[280px] min-w-[200px] flex flex-col justify-between bg-white p-8 animate-slideIn">
-              <div>{children}</div>
+            <div className="absolute top-0 right-0 bottom-0 w-1/2 max-w-[280px] min-w-[200px] flex flex-col bg-white p-8 animate-slideIn">
               <button
-                className="flex text-lg items-center justify-center gap-2 p-2 cursor-pointer border-none bg-[hsl(350deg_100%_90%)] rounded-[4px]"
+                className="absolute top-2 right-4 flex text-lg items-center justify-center p-2 cursor-pointer border-none"
                 onClick={handleDismiss}
               >
-                X
+                <CloseSVG />
+                <VisuallyHidden>Close menu</VisuallyHidden>
               </button>
+
+              <div className="pt-7">{children}</div>
             </div>
           </div>
         </div>
