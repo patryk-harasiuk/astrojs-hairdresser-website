@@ -12,14 +12,21 @@ const MENU_ITEMS = [
 
 type Props = {
   className?: string;
+  listItemClassName?: string;
 };
 
-const MenuList = ({ className }: Props) => (
+const MenuList = ({ className, listItemClassName }: Props) => (
   <ul className={clsx('flex gap-4', className)}>
     {MENU_ITEMS.map(({ href, text }, index) => {
       return (
         <li key={index}>
-          <a href={href} className="rounded-md px-3 py-2 text-sm font-medium ">
+          <a
+            href={href}
+            className={clsx(
+              'py-1 text-sm font-medium transition-all duration-150 border-b-transparent border-b-2',
+              listItemClassName,
+            )}
+          >
             {text}
           </a>
         </li>
@@ -44,7 +51,7 @@ export const SiteHeader = () => {
         role="navigation"
         className="font-600 mx-12 hidden gap-12 text-lg text-gray-700 md:flex"
       >
-        <MenuList className="text-slate-100 hover:bg-gray-700" />
+        <MenuList className="text-slate-100" listItemClassName="hover:border-b-white" />
       </nav>
 
       <div className="flex gap-8 md:hidden">
@@ -61,7 +68,7 @@ export const SiteHeader = () => {
       {isMenuOpen && (
         <Drawer handleDismiss={toggleIsMenuOpen}>
           <nav>
-            <MenuList className="flex-col text-black" />
+            <MenuList className="flex-col text-black" listItemClassName="hover:border-b-black" />
           </nav>
         </Drawer>
       )}

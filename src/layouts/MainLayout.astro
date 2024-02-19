@@ -14,20 +14,9 @@ const { pageTitle } = Astro.props;
 
   </head>
   <body>
-    <!-- <nav>
-      <a href="#">O mnie</a>
-      <a href="#">Cennik</a>
-      <a href="#">Kontakt</a>
-    </nav> -->
-
     <SiteHeader client:load  />
-    
- 
-    <main>
+    <main class="min-h-full min-w-full overflow-x-clip px-8 py-12 md:py-16">
         <slot />
     </main>
-
-    <!-- Insert footer when ready -->
-    <!-- <Footer /> -->
   </body>
 </html>
