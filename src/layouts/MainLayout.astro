@@ -15,8 +15,10 @@ const { pageTitle } = Astro.props;
   </head>
   <body>
     <SiteHeader client:load  />
-    <main class="min-h-full min-w-full overflow-x-clip px-8 py-12 md:py-16">
+    <!-- <main class="min-h-full flex items-center flex-col w-full gap-y-10 px-8 pb-12 md:pb-16"> -->
+      <main>
         <slot />
-    </main>
+      </main>
+    <!-- </main> -->
   </body>
 </html>
