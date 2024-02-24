@@ -15,10 +15,8 @@ const { pageTitle } = Astro.props;
   </head>
   <body>
     <SiteHeader client:load  />
-    <!-- <main class="min-h-full flex items-center flex-col w-full gap-y-10 px-8 pb-12 md:pb-16"> -->
       <main>
         <slot />
       </main>
-    <!-- </main> -->
   </body>
 </html>

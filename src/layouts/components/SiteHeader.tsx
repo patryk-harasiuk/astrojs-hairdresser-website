@@ -37,13 +37,13 @@ const MenuList = ({ className, listItemClassName }: Props) => (
 
 export const SiteHeader = () => {
   const { value: isMenuOpen, toggleValue: toggleIsMenuOpen } = useToggle(false);
-  // 1px solid rgba(160,160,160,.2)
+
   return (
     <header className="relative w-full flex flex-col items-center justify-center bg-black gap-y-4 pt-[18px] px-4">
       <div className="flex flex-col gap-y-2">
         <a
           href="/"
-          className="no-underline uppercase text-[#FFFF00] font-extralight text-xl tracking-[0.4em] border-l border-l-[#FFFF00] pl-1"
+          className="no-underline uppercase text-white font-extralight text-3xl tracking-[0.4em] border-l border-l-white pl-1"
         >
           estetic
           <br /> hair
@@ -64,7 +64,7 @@ export const SiteHeader = () => {
           role="navigation"
           className="font-600 mx-12 hidden gap-12 text-lg text-gray-700 md:flex"
         >
-          <MenuList className="text-slate-100" listItemClassName="hover:border-b-white" />
+          <MenuList className="text-slate-100 uppercase" listItemClassName="hover:border-b-white" />
         </nav>
 
         <div className="flex gap-8 md:hidden">
