@@ -1,3 +1,5 @@
+import type { Service } from '../types';
+
 export const ABOUT_ME = `EsteticHairStudio to miejsce, w którym profesjonalnie i bardzo starannie zajmę się Twoimi włosami. Oferuję szeroki wachlarz usług fryzjersko-pielęgnacyjnych w najwyższym standardzie. Gwarantuję bezpieczeństwo i pełne zadowolenie z wykonanej przeze mnie pracy.
 Świadczę takie usługi jak keratynowe prostowanie włosów, glow hair, rekonstrukcja na zimno, botox i inne zabiegi pielęgnacyjne. Podczas pracy korzystam z profesjonalnych produktów najwyższej jakości. Jestem po wielokrotnych szkoleniach od najlepszych specjalistów w Polsce.
 Poznaj mnie bliżej w moich social mediach`;
@@ -22,3 +24,56 @@ Botox to koktajl odżywczy dla włosów. Idealnie sprawdzi się przy włosach de
 Średni czas utrzymywania się botoxu to 2-3 miesiące.`;
 
 export const MY_OFFER_3 = `Rekonstrukcja na zimno to zabieg mający na celu zniwelowanie zniszczeń w łodydze włosa, odżywienie kosmyków i poprawę ich wyglądu, a przede wszystkim odbudowanie i pobudzenie włosa do silnej regeneracji.`;
+
+export const SERVICES_MOCK: Service[] = [
+  {
+    serviceName: 'Keratynowe prostowanie',
+    pricing: [
+      { type: 'Włosy krótkie', price: '290' },
+      { type: 'Włosy średnie', price: '350' },
+      { type: 'Włosy długie', price: '400' },
+    ],
+  },
+  {
+    serviceName: 'Botox',
+    pricing: [
+      { type: 'Włosy krótkie', price: '200' },
+      { type: 'Włosy średnie', price: '250' },
+      { type: 'Włosy długie', price: '300' },
+    ],
+  },
+  {
+    serviceName: 'Rekonstrukcja na zimno',
+    pricing: [
+      { type: 'Włosy krótkie', price: '190' },
+      { type: 'Włosy średnie', price: '240' },
+      { type: 'Włosy długie', price: '290' },
+    ],
+  },
+
+  {
+    serviceName: 'Glow Hair',
+    pricing: [
+      { type: 'Włosy krótkie', price: '200' },
+      { type: 'Włosy średnie', price: '250' },
+      { type: 'Włosy długie', price: '300' },
+    ],
+  },
+
+  {
+    serviceName: 'Nanoplastia',
+    pricing: [
+      { type: 'Włosy krótkie', price: '400' },
+      { type: 'Włosy średnie', price: '450' },
+      { type: 'Włosy długie', price: '500/700' },
+    ],
+  },
+
+  {
+    serviceName: 'Strzyzenie',
+    pricing: [
+      { type: 'Strzyzenie męskie', price: '30' },
+      { type: 'Strzyzenie damskie', price: '50' },
+    ],
+  },
+];
