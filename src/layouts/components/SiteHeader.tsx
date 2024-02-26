@@ -15,7 +15,7 @@ type Props = {
   listItemClassName?: string;
 };
 
-const MenuList = ({ className, listItemClassName }: Props) => (
+export const MenuList = ({ className, listItemClassName }: Props) => (
   <ul className={clsx('flex gap-4', className)}>
     {MENU_ITEMS.map(({ href, text }, index) => {
       return (
