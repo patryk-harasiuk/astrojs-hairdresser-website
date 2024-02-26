@@ -42,6 +42,7 @@ export const SERVICES_MOCK: Service[] = [
       { type: 'Włosy długie', price: '300' },
     ],
   },
+
   {
     serviceName: 'Rekonstrukcja na zimno',
     pricing: [
