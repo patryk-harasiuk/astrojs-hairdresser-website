@@ -18,7 +18,7 @@ export const Drawer = ({ children, handleDismiss }: Props) => {
       <ReactFocusLock returnFocus={true}>
         <div className="fixed inset-0 p-4">
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fadeIn">
-            <div className="absolute top-0 right-0 bottom-0 w-1/2 max-w-[280px] min-w-[200px] flex flex-col bg-white p-8 animate-slideIn">
+            <div className="absolute top-0 right-0 bottom-0 w-3/4 sm:w-1/2 max-w-[280px] min-w-[200px] flex flex-col bg-white p-8 animate-slideIn">
               <button
                 className="absolute top-2 right-4 flex text-lg items-center justify-center p-2 cursor-pointer border-none"
                 onClick={handleDismiss}

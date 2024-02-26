@@ -7,7 +7,7 @@ type ServiceBoxListItemProps = {
 
 const ServiceBoxListItem = ({ type, price }: ServiceBoxListItemProps) => (
   <li className="w-full flex justify-between items-baseline">
-    <p className="text-base text-black font-bold">{type}</p>
+    <p className="text-base text-black max-w-[300px] font-bold">{type}</p>
     <span className="text-sm font-light text-black text-nowrap">{price}</span>
   </li>
 );

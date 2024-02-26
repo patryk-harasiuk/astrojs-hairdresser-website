@@ -16,9 +16,6 @@ export default {
       fontFamily: {
         sans: ['Roboto', ...defaultTheme.fontFamily.sans],
       },
-      //   fontFamily: {
-      //     roboto: 'Roboto, sans-serif',
-      //   },
       keyframes: {
         slideIn: {
           '0%': {
