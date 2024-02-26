@@ -6,22 +6,24 @@ import clsx from 'clsx';
 
 const MENU_ITEMS = [
   { text: 'O mnie', href: '/o-mnie' },
-  { text: 'Moja oferta', href: '#my-offer' },
-  { text: 'Cennik', href: '#price-list' },
+  { text: 'Moja oferta', href: '#moja-oferta' },
+  { text: 'Cennik', href: '#cennik' },
   { text: 'Kontakt', href: '/' },
 ];
 
 type Props = {
   className?: string;
   listItemClassName?: string;
+  onClick?: VoidFunction;
 };
 
-export const MenuList = ({ className, listItemClassName }: Props) => (
+export const MenuList = ({ className, listItemClassName, onClick }: Props) => (
   <ul className={clsx('flex gap-4', className)}>
     {MENU_ITEMS.map(({ href, text }, index) => {
       return (
         <li key={index}>
           <a
+            onClick={onClick}
             href={href}
             className={clsx(
               'py-1 text-sm font-medium transition-all duration-150 border-b-transparent border-b-2',
@@ -82,7 +84,11 @@ export const SiteHeader = () => {
         {isMenuOpen && (
           <Drawer handleDismiss={toggleIsMenuOpen}>
             <nav>
-              <MenuList className="flex-col text-black" listItemClassName="hover:border-b-black" />
+              <MenuList
+                className="flex-col text-black"
+                listItemClassName="hover:border-b-black"
+                onClick={toggleIsMenuOpen}
+              />
             </nav>
           </Drawer>
         )}

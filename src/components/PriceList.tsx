@@ -3,7 +3,7 @@ import { ServiceBox } from './ServiceBox';
 
 export const PriceList = () => (
   <section
-    id="price-list"
+    id="cennik"
     className="container pt-10 flex items-center flex-col w-full gap-y-16 prose lg:prose-xl"
   >
     <h2 className="text-3xl self-start font-bold not-prose">Cennik</h2>
