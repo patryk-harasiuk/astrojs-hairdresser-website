@@ -5,8 +5,9 @@ import VisuallyHidden from '../../components/VisuallyHidden';
 import clsx from 'clsx';
 
 const MENU_ITEMS = [
-  { text: 'O mnie', href: '/' },
-  { text: 'Cennik', href: '/' },
+  { text: 'O mnie', href: '/o-mnie' },
+  { text: 'Moja oferta', href: '#my-offer' },
+  { text: 'Cennik', href: '#price-list' },
   { text: 'Kontakt', href: '/' },
 ];
 
@@ -56,7 +57,7 @@ export const SiteHeader = () => {
 
       <div className="max-w-[900px] w-full h-[1px] bg-[rgba(160,160,160,.2)]" />
 
-      <div className="sticky z-50  top-0  flex w-full items-center justify-between pb-[18px] md:items-baseline md:justify-start md:px-8">
+      <div className="sticky top-0 flex w-full items-center justify-between pb-[18px] md:items-baseline md:justify-start md:px-8">
         <div className="flex-[revert] md:flex md:flex-1" />
 
         <nav
