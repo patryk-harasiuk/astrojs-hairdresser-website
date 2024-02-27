@@ -6,8 +6,8 @@ import clsx from 'clsx';
 
 const MENU_ITEMS = [
   { text: 'O mnie', href: '/o-mnie' },
-  { text: 'Moja oferta', href: '#moja-oferta' },
-  { text: 'Cennik', href: '#cennik' },
+  { text: 'Moja oferta', href: 'http://localhost:4321/#moja-oferta' },
+  { text: 'Cennik', href: 'http://localhost:4321/#cennik' },
   { text: 'Kontakt', href: '/' },
 ];
 
@@ -23,7 +23,13 @@ export const MenuList = ({ className, listItemClassName, onClick }: Props) => (
       return (
         <li key={index}>
           <a
-            onClick={onClick}
+            onClick={() => {
+              onClick?.();
+              // if (href.startsWith('#')) {
+              //   const element = document.getElementById(href.slice(1));
+              //   element?.scrollIntoView({ behavior: 'smooth' });
+              // }
+            }}
             href={href}
             className={clsx(
               'py-1 text-sm font-medium transition-all duration-150 border-b-transparent border-b-2',
