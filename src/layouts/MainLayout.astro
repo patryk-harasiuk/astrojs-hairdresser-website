@@ -4,6 +4,7 @@ import { SiteHeader } from './components/SiteHeader.tsx'
 import { Footer } from './components/Footer.tsx'
 
 const { pageTitle } = Astro.props;
+const {pageDescription} = Astro.props;
 
 ---
 
@@ -11,6 +12,7 @@ const { pageTitle } = Astro.props;
   <head>
     <meta charset="utf-8">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={pageDescription}/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{pageTitle}</title>
     <ViewTransitions />

@@ -9,12 +9,15 @@ import Image from "astro/components/Image.astro";
 
 ---
 
-<MainLayout>
+<MainLayout pageTitle="Estetic Hair Studio" pageDescription="Estetic Hair Studio - zabiegi i usługi fryzjerskie">
 	<div class="w-full h-full">
-		<Image src={LogoIMG} alt="Logo" class={'w-full block h-[700px] object-cover'} />
+		<Image src={LogoIMG} alt="" class={'w-full block h-[700px] object-cover'} />
 	</div>
-
+	
 	<MyOffer />
-
+	
 	<PriceList />
 </MainLayout>
+
+<!-- widths={[360, 720, 1600, LogoIMG.width]} -->
+<!-- sizes={`(max-width: 360px) 360px, (max-width: 720px) 720px, (max-width: 1600px) 1600px, ${LogoIMG.width}px`} -->
