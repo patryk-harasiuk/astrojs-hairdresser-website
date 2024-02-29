@@ -30,7 +30,7 @@ export const SERVICES_MOCK: Service[] = [
     serviceName: 'Keratynowe prostowanie',
     pricing: [
       {
-        type: 'Włosy krótkie krótkie krótkie krótkie krótk Rdasdadaddas dadKRÓTKIEK RÓTKIEKRÓ TKIEKRÓTK IEKRÓTKIE',
+        type: 'Włosy krótkie krótkie',
         price: '290',
       },
       { type: 'Włosy średnie', price: '350' },
@@ -74,10 +74,10 @@ export const SERVICES_MOCK: Service[] = [
   },
 
   {
-    serviceName: 'Strzyzenie',
+    serviceName: 'Strżyzenie',
     pricing: [
-      { type: 'Strzyzenie męskie', price: '30' },
-      { type: 'Strzyzenie damskie', price: '50' },
+      { type: 'Strzyżenie męskie', price: '30' },
+      { type: 'Strzyżenie damskie', price: '50' },
     ],
   },
 ];

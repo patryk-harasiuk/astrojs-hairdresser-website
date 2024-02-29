@@ -5,9 +5,9 @@ import VisuallyHidden from '../../components/VisuallyHidden';
 import clsx from 'clsx';
 
 const MENU_ITEMS = [
-  { text: 'O mnie', href: '/o-mnie' },
-  { text: 'Moja oferta', href: 'http://localhost:4321/#moja-oferta' },
-  { text: 'Cennik', href: 'http://localhost:4321/#cennik' },
+  { text: 'O mnie', href: '#o-mnie' },
+  { text: 'Moja oferta', href: '#moja-oferta' },
+  { text: 'Cennik', href: '#cennik' },
   { text: 'Kontakt', href: '/' },
 ];
 
@@ -23,13 +23,7 @@ export const MenuList = ({ className, listItemClassName, onClick }: Props) => (
       return (
         <li key={index}>
           <a
-            onClick={() => {
-              onClick?.();
-              // if (href.startsWith('#')) {
-              //   const element = document.getElementById(href.slice(1));
-              //   element?.scrollIntoView({ behavior: 'smooth' });
-              // }
-            }}
+            onClick={onClick}
             href={href}
             className={clsx(
               'py-1 text-sm font-medium transition-all duration-150 border-b-transparent border-b-2',

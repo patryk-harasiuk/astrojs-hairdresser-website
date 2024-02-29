@@ -10,7 +10,7 @@ export const ServiceBox = ({ serviceName, pricing }: Props) => (
     <div className="flex flex-col gap-y-5 not-prose">
       <ServiceBoxList pricing={pricing} />
 
-      <p className="text-black text-base font-light">Gęste włosy + 40 zł</p>
+      {/* <p className="text-black text-base font-light">Gęste włosy + 40 zł</p> */}
     </div>
   </div>
 );

@@ -5,6 +5,7 @@ import { MyOffer } from '../components/MyOffer.tsx'
 import { PriceList } from '../components/PriceList.tsx'
 import LogoIMG from '../images/logo2.jpeg'
 import Image from "astro/components/Image.astro";
+import { AboutMe } from "../components/AboutMe";
 
 
 ---
@@ -13,6 +14,8 @@ import Image from "astro/components/Image.astro";
 	<div class="w-full h-full">
 		<Image src={LogoIMG} alt="" class={'w-full block h-[700px] object-cover'} />
 	</div>
+
+	<AboutMe />
 	
 	<MyOffer />
 	
