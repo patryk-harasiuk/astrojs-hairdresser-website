@@ -7,7 +7,7 @@ export const MyOffer = forwardRef<HTMLElement | null>((_, ref) => (
     id="moja-oferta"
     className="container pt-10 flex items-center flex-col w-full gap-y-2 prose lg:prose-xl"
   >
-    <h2 className="text-3xl not-prose self-start font-bold">Moja oferta</h2>
+    <h2 className="text-3xl pb-4 not-prose self-start font-bold">Moja oferta</h2>
 
     <p>{MY_OFFER_1}</p>
 

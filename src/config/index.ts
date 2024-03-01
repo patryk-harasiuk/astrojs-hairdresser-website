@@ -74,7 +74,7 @@ export const SERVICES_MOCK: Service[] = [
   },
 
   {
-    serviceName: 'Strżyzenie',
+    serviceName: 'Strzyżenie',
     pricing: [
       { type: 'Strzyżenie męskie', price: '30' },
       { type: 'Strzyżenie damskie', price: '50' },

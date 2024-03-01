@@ -6,6 +6,7 @@ import { PriceList } from '../components/PriceList.tsx'
 import LogoIMG from '../images/logo2.jpeg'
 import Image from "astro/components/Image.astro";
 import { AboutMe } from "../components/AboutMe";
+import { Contact } from "../components/Contact";
 
 
 ---
@@ -20,7 +21,6 @@ import { AboutMe } from "../components/AboutMe";
 	<MyOffer />
 	
 	<PriceList />
-</MainLayout>
 
-<!-- widths={[360, 720, 1600, LogoIMG.width]} -->
-<!-- sizes={`(max-width: 360px) 360px, (max-width: 720px) 720px, (max-width: 1600px) 1600px, ${LogoIMG.width}px`} -->
+	<Contact />
+</MainLayout>

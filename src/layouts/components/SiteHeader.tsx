@@ -8,7 +8,7 @@ const MENU_ITEMS = [
   { text: 'O mnie', href: '#o-mnie' },
   { text: 'Moja oferta', href: '#moja-oferta' },
   { text: 'Cennik', href: '#cennik' },
-  { text: 'Kontakt', href: '/' },
+  { text: 'Kontakt', href: '#kontakt' },
 ];
 
 type Props = {
