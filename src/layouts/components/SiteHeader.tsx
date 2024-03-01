@@ -42,24 +42,8 @@ export const SiteHeader = () => {
   const { value: isMenuOpen, toggleValue: toggleIsMenuOpen } = useToggle(false);
 
   return (
-    <header className="relative w-full flex flex-col items-center justify-center bg-black gap-y-4 pt-[18px] px-4">
-      <div className="flex flex-col gap-y-2">
-        <a
-          href="/"
-          className="no-underline uppercase text-white font-extralight text-3xl tracking-[0.4em] border-l border-l-white pl-1"
-        >
-          estetic
-          <br /> hair
-          <br /> studio
-          <br />
-        </a>
-
-        <p className="uppercase text-white text-sm font-sans">klaudia skubis</p>
-      </div>
-
-      <div className="max-w-[900px] w-full h-[1px] bg-[rgba(160,160,160,.2)]" />
-
-      <div className="sticky top-0 flex w-full items-center justify-between pb-[18px] md:items-baseline md:justify-start md:px-8">
+    <header className="sticky top-0 w-full flex flex-col items-center justify-center bg-black py-[10px] px-4">
+      <div className="flex w-full items-center justify-between py-4 md:items-center md:justify-center md:px-8">
         <div className="flex-[revert] md:flex md:flex-1" />
 
         <nav
