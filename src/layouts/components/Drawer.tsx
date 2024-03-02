@@ -15,7 +15,7 @@ export const Drawer = ({ children, handleDismiss }: Props) => {
 
   return (
     <Portal>
-      <ReactFocusLock returnFocus={true}>
+      <ReactFocusLock returnFocus={false}>
         <div className="fixed inset-0 p-4">
           <div className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fadeIn">
             <div className="absolute top-0 right-0 bottom-0 w-3/4 sm:w-1/2 max-w-[280px] min-w-[200px] flex flex-col bg-white p-8 animate-slideIn">

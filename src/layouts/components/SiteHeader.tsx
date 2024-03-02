@@ -3,6 +3,7 @@ import { useToggle } from '../../hooks/useToggle';
 import { MenuSVG } from './MenuSVG';
 import VisuallyHidden from '../../components/VisuallyHidden';
 import clsx from 'clsx';
+import { lockBodyScroll, unlockBodyScroll } from '../../helpers/lockBodyScroll';
 
 const MENU_ITEMS = [
   { text: 'O mnie', href: '#o-mnie' },
@@ -41,6 +42,16 @@ export const MenuList = ({ className, listItemClassName, onClick }: Props) => (
 export const SiteHeader = () => {
   const { value: isMenuOpen, toggleValue: toggleIsMenuOpen } = useToggle(false);
 
+  const closeModal = () => {
+    toggleIsMenuOpen();
+    unlockBodyScroll();
+  };
+
+  const openModal = () => {
+    toggleIsMenuOpen();
+    lockBodyScroll();
+  };
+
   return (
     <header className="sticky top-0 w-full flex flex-col items-center justify-center bg-black py-[10px] px-4">
       <div className="flex w-full items-center justify-between py-4 md:items-center md:justify-center md:px-8">
@@ -57,7 +68,7 @@ export const SiteHeader = () => {
         <div className="flex gap-8 md:hidden">
           <button
             aria-expanded={isMenuOpen}
-            onClick={toggleIsMenuOpen}
+            onClick={openModal}
             className="bg-transparent text-white border-none p-0 m-0 w-8 h-8 grid place-content-center cursor-pointer transition-transform duration-200 hover:scale-110"
           >
             <MenuSVG />
@@ -66,12 +77,12 @@ export const SiteHeader = () => {
         </div>
 
         {isMenuOpen && (
-          <Drawer handleDismiss={toggleIsMenuOpen}>
+          <Drawer handleDismiss={closeModal}>
             <nav>
               <MenuList
                 className="flex-col text-black"
                 listItemClassName="hover:border-b-black"
-                onClick={toggleIsMenuOpen}
+                onClick={closeModal}
               />
             </nav>
           </Drawer>

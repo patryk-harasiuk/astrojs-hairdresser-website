@@ -1,4 +1,6 @@
-import { ABOUT_ME_1, ABOUT_ME_2, ABOUT_ME_3 } from '../config';
+import { ABOUT_ME_1, ABOUT_ME_2, ABOUT_ME_3, INSTAGRAM_ACCOUNT_HREF } from '../config';
+import { InstagramSVG } from './InstagramSVG';
+import VisuallyHidden from './VisuallyHidden';
 
 export const AboutMe = () => (
   <section
@@ -11,6 +13,13 @@ export const AboutMe = () => (
 
     <p>{ABOUT_ME_2}</p>
 
-    <p>{ABOUT_ME_3}</p>
+    <div className="flex flex-col items-center mb-0">
+      <p>{ABOUT_ME_3}</p>
+
+      <a href={INSTAGRAM_ACCOUNT_HREF} target="_blank" rel="noopener noreferrer">
+        <InstagramSVG />
+        <VisuallyHidden>Instagram</VisuallyHidden>
+      </a>
+    </div>
   </section>
 );
