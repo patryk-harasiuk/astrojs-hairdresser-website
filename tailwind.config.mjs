@@ -42,7 +42,7 @@ export default {
       animation: {
         slideIn: 'slideIn 400ms cubic-bezier(.14,.78,.36,1);',
         slideOut: 'slideOut 400ms cubic-bezier(.14,.78,.36,1)',
-        fadeIn: 'fadeIn 850ms cubic-bezier(.14,.78,.36,1);',
+        fadeIn: 'fadeIn 400ms cubic-bezier(.14,.78,.36,1);',
       },
     },
   },

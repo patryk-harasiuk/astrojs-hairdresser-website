@@ -1,8 +1,8 @@
 import { MenuList } from './SiteHeader';
 
 export const Footer = () => (
-  <footer className=" bg-black w-full flex flex-col">
-    <div className="container py-14">
+  <footer className="bg-black w-full flex flex-col">
+    <div className="container py-14 flex w-full justify-center">
       <MenuList listItemClassName="text-white" />
     </div>
 

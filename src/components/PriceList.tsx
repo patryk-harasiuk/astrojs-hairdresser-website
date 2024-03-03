@@ -11,5 +11,10 @@ export const PriceList = () => (
     {SERVICES_MOCK.map(({ serviceName, pricing }, index) => (
       <ServiceBox key={index} pricing={pricing} serviceName={serviceName} />
     ))}
+
+    <div className="not-prose font-normal text-base">
+      <p>-15% przy pierwszej wizycie</p>
+      <p>Konsultacja - darmowa</p>
+    </div>
   </section>
 );
