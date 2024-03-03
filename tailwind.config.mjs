@@ -17,16 +17,6 @@ export default {
         sans: ['Roboto', ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
-        // slideIn: {
-        //   '0%': {
-        //     transform: `translateX(100%)`,
-        //   },
-        // },
-        // slideOut: {
-        //   '0%': {
-        //     transform: `translateX(-100%)`,
-        //   },
-        // },
         slideIn: {
           '0%': {
             transform: `translateX(100%)`,
@@ -50,8 +40,8 @@ export default {
         },
       },
       animation: {
-        slideIn: 'slideIn 500ms cubic-bezier(.14,.78,.36,1);',
-        slideOut: 'slideOut 500ms cubic-bezier(.14,.78,.36,1)',
+        slideIn: 'slideIn 400ms cubic-bezier(.14,.78,.36,1);',
+        slideOut: 'slideOut 400ms cubic-bezier(.14,.78,.36,1)',
         fadeIn: 'fadeIn 850ms cubic-bezier(.14,.78,.36,1);',
       },
     },

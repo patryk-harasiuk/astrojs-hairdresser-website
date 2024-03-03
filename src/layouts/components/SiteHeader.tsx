@@ -1,9 +1,11 @@
+import { useEffect, useRef, useState } from 'react';
 import { Drawer } from './Drawer';
-import { useToggle } from '../../hooks/useToggle';
+
 import { MenuSVG } from './MenuSVG';
 import VisuallyHidden from '../../components/VisuallyHidden';
 import clsx from 'clsx';
-import { lockBodyScroll, unlockBodyScroll } from '../../helpers/lockBodyScroll';
+import { useModalControls } from '../../hooks/useModalControls';
+import { hasAnimationsFinished } from '../../helpers/hasAnimationsFinished';
 
 const MENU_ITEMS = [
   { text: 'O mnie', href: '#o-mnie' },
@@ -17,6 +19,8 @@ type Props = {
   listItemClassName?: string;
   onClick?: VoidFunction;
 };
+
+export type ModalState = 'opening' | 'closing' | 'closed';
 
 export const MenuList = ({ className, listItemClassName, onClick }: Props) => (
   <ul className={clsx('flex gap-4', className)}>
@@ -40,17 +44,21 @@ export const MenuList = ({ className, listItemClassName, onClick }: Props) => (
 );
 
 export const SiteHeader = () => {
-  const { value: isMenuOpen, toggleValue: toggleIsMenuOpen } = useToggle(false);
+  const { closeModal, isOpen, openModal } = useModalControls();
 
-  const closeModal = () => {
-    toggleIsMenuOpen();
-    unlockBodyScroll();
+  const [modalState, setModalState] = useState<ModalState>('closed');
+
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  const closeAction = () => {
+    setModalState('closing');
   };
 
-  const openModal = () => {
-    toggleIsMenuOpen();
-    lockBodyScroll();
-  };
+  useEffect(() => {
+    if (modalState === 'closing' && modalRef.current) {
+      hasAnimationsFinished(modalRef.current).then(closeModal);
+    }
+  }, [modalState, closeModal]);
 
   return (
     <header className="sticky top-0 w-full flex flex-col items-center justify-center bg-black py-[10px] px-4">
@@ -67,8 +75,11 @@ export const SiteHeader = () => {
 
         <div className="flex gap-8 md:hidden">
           <button
-            aria-expanded={isMenuOpen}
-            onClick={openModal}
+            aria-expanded={isOpen}
+            onClick={() => {
+              setModalState('opening');
+              openModal();
+            }}
             className="bg-transparent text-white border-none p-0 m-0 w-8 h-8 grid place-content-center cursor-pointer transition-transform duration-200 hover:scale-110"
           >
             <MenuSVG />
@@ -76,13 +87,13 @@ export const SiteHeader = () => {
           </button>
         </div>
 
-        {isMenuOpen && (
-          <Drawer handleDismiss={closeModal}>
+        {isOpen && (
+          <Drawer handleDismiss={closeAction} ref={modalRef} modalState={modalState}>
             <nav>
               <MenuList
                 className="flex-col text-black"
                 listItemClassName="hover:border-b-black"
-                onClick={closeModal}
+                onClick={closeAction}
               />
             </nav>
           </Drawer>
