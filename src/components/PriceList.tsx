@@ -12,9 +12,9 @@ export const PriceList = () => (
       <ServiceBox key={index} pricing={pricing} serviceName={serviceName} />
     ))}
 
-    <div className="not-prose font-normal text-base">
-      <p>-15% przy pierwszej wizycie</p>
-      <p>Konsultacja - darmowa</p>
+    <div className="prose lg:prose-xl flex flex-col gap-y-2">
+      <p className="not-prose">-15% przy pierwszej wizycie</p>
+      <p className="not-prose">Konsultacja - darmowa</p>
     </div>
   </section>
 );
