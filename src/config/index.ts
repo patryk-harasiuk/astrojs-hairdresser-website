@@ -36,7 +36,7 @@ export const SERVICES_MOCK: Service[] = [
         price: '290',
       },
       { type: 'Włosy średnie', price: '350' },
-      { type: 'Włosy długie', price: '400' },
+      { type: 'Włosy długie', price: '400/450' },
     ],
   },
   {
@@ -44,16 +44,16 @@ export const SERVICES_MOCK: Service[] = [
     pricing: [
       { type: 'Włosy krótkie', price: '200' },
       { type: 'Włosy średnie', price: '250' },
-      { type: 'Włosy długie', price: '300' },
+      { type: 'Włosy długie', price: '300/350' },
     ],
   },
 
   {
     serviceName: 'Rekonstrukcja na zimno',
     pricing: [
-      { type: 'Włosy krótkie', price: '190' },
+      { type: 'Włosy krótkie', price: '200' },
       { type: 'Włosy średnie', price: '240' },
-      { type: 'Włosy długie', price: '290' },
+      { type: 'Włosy długie', price: '290/350' },
     ],
   },
 
@@ -62,7 +62,7 @@ export const SERVICES_MOCK: Service[] = [
     pricing: [
       { type: 'Włosy krótkie', price: '200' },
       { type: 'Włosy średnie', price: '250' },
-      { type: 'Włosy długie', price: '300' },
+      { type: 'Włosy długie', price: '300/350' },
     ],
   },
 
@@ -78,7 +78,7 @@ export const SERVICES_MOCK: Service[] = [
   {
     serviceName: 'Strzyżenie',
     pricing: [
-      { type: 'Strzyżenie męskie', price: '30' },
+      { type: 'Strzyżenie męskie', price: '35' },
       { type: 'Strzyżenie damskie', price: '50' },
     ],
   },
