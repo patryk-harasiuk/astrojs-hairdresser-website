@@ -32,7 +32,7 @@ export const SERVICES_MOCK: Service[] = [
     serviceName: 'Keratynowe prostowanie',
     pricing: [
       {
-        type: 'Włosy krótkie krótkie',
+        type: 'Włosy krótkie',
         price: '290',
       },
       { type: 'Włosy średnie', price: '350' },
