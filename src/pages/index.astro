@@ -1,26 +1,36 @@
 ---
+import MainLayout from '../layouts/MainLayout.astro';
+import { MyOffer } from '../components/MyOffer';
+import ServiceList from '../components/ServiceList.astro';
+import LogoIMG from '../images/logo2.jpeg';
+import Image from 'astro/components/Image.astro';
+import { AboutMe } from '../components/AboutMe';
+import { Contact } from '../components/Contact';
+import { fetchCMSContent } from '../api/fetchCMSContent';
+import { ServiceListMock } from '../components/ServiceListMock';
 
-import MainLayout from "../layouts/MainLayout.astro";
-import { MyOffer } from '../components/MyOffer.tsx'
-import { PriceList } from '../components/PriceList.tsx'
-import LogoIMG from '../images/logo2.jpeg'
-import Image from "astro/components/Image.astro";
-import { AboutMe } from "../components/AboutMe";
-import { Contact } from "../components/Contact";
-
-
+const response = await fetchCMSContent();
 ---
 
-<MainLayout pageTitle="Estetic Hair Studio Klaudia Skubis" pageDescription="Estetic Hair Studio Biłgoraj - usługi fryzjerskie, salon fryzjerski, keratynowe prostowanie, nanoplastia, botox, glow hair">
-	<div class="w-full h-full">
-		<Image src={LogoIMG} alt="" class={'w-full block h-[700px] object-cover'} />
-	</div>
+<MainLayout
+  pageTitle="Estetic Hair Studio Klaudia Skubis"
+  pageDescription="Estetic Hair Studio Biłgoraj - usługi fryzjerskie, salon fryzjerski, keratynowe prostowanie, nanoplastia, botox, glow hair"
+>
+  <div class="w-full h-full">
+    <Image src={LogoIMG} alt="" class={'w-full block h-[700px] object-cover'} />
+  </div>
 
-	<AboutMe />
-	
-	<MyOffer />
-	
-	<PriceList />
+  <AboutMe />
 
-	<Contact />
+  <MyOffer />
+
+  {
+    response.type === 'ok' ? (
+      <ServiceList services={response.data.data.allServices.reverse()} />
+    ) : (
+      <ServiceListMock />
+    )
+  }
+
+  <Contact />
 </MainLayout>
