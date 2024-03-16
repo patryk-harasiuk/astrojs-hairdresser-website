@@ -1,0 +1,41 @@
+---
+import { marked } from 'marked';
+
+interface Props {
+  services: {
+    serviceName: string;
+    pricing: string;
+  }[];
+}
+
+const { services } = Astro.props;
+---
+
+<section
+  id="cennik"
+  class="container pt-10 flex items-center flex-col w-full gap-y-16 prose lg:prose-xl"
+>
+  <h2 class="text-3xl self-start font-bold not-prose">Cennik</h2>
+
+  {
+    services.map(({ serviceName, pricing }) => {
+      return (
+        <div class="flex flex-col gap-y-8 self-start w-full max-w-[420px]">
+          <h3 class="text-xl text-black font-bold uppercase not-prose">{serviceName}</h3>
+
+          <div
+            class="w-full prose [&_p]:flex [&_p]:justify-between [&_p]:text-base [&_p]:text-black [&_p]:font-bold [&_p]:items-baseline [&_span]:text-sm [&_span]:font-light [&_span]:text-black [&_span]:text-nowrap"
+            set:html={marked.parse(pricing)}
+          />
+        </div>
+      );
+    })
+  }
+
+  <div class="prose lg:prose-xl text-center flex flex-col gap-y-2">
+    <p class="not-prose">-15% przy pierwszej wizycie</p>
+    <p class="not-prose">Konsultacja - darmowa</p>
+  </div>
+</section>
+
+

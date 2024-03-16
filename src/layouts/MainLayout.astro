@@ -1,29 +1,28 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import { SiteHeader } from './components/SiteHeader.tsx'
-import { SuperHeader } from './components/SuperHeader.tsx'
-import { Footer } from './components/Footer.tsx'
+import { ViewTransitions } from 'astro:transitions';
+import { SiteHeader } from './components/SiteHeader';
+import { SuperHeader } from './components/SuperHeader';
+import { Footer } from './components/Footer';
 
 const { pageTitle } = Astro.props;
 const { pageDescription } = Astro.props;
-
 ---
 
 <html lang="pl" class="scroll-smooth scroll-p-12">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="description" content={pageDescription}/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content={pageDescription} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
   <body class="flex flex-col h-full min-h-screen">
     <SuperHeader />
-    <SiteHeader client:load  />
-      <main class="pb-8 flex-1">
-        <slot />
-      </main>
+    <SiteHeader client:load />
+    <main class="pb-8 flex-1">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
