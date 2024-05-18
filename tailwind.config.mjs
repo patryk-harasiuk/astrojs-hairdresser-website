@@ -15,6 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Roboto', ...defaultTheme.fontFamily.sans],
+        fsrome: 'FSRome, sans-serif',
       },
       keyframes: {
         slideIn: {

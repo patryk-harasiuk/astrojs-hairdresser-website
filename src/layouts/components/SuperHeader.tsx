@@ -1,19 +1,19 @@
 export const SuperHeader = () => (
-  <div className="w-full flex flex-col items-center bg-black">
-    <div className="flex flex-col gap-y-2 pt-[18px] pb-4">
+  <div className="w-full flex justify-center bg-black font-fsrome z-10">
+    <div className="flex border border-white mt-4 relative">
       <a
         href="/"
-        className="no-underline uppercase text-white font-extralight text-3xl tracking-[0.4em] border-l border-l-white pl-1"
+        className="flex gap-x-2 sm:gap-x-3 tracking-widest no-underline capitalize text-white font-normal text-2xl sm:text-4xl sm:p-6 p-4"
       >
-        estetic
-        <br /> hair
-        <br /> studio
-        <br />
+        <span>estetic</span> <span>hair</span>
+        <span> studio </span>
       </a>
 
-      <p className="uppercase text-white text-sm font-sans">klaudia skubis</p>
+      <div className="-mb-[10px] bottom-0 left-1/2 transform -translate-x-1/2 px-2 bg-black absolute">
+        <p className="uppercase w-full text-white text-sm font-sans sm:tracking-[0.3em]">
+          klaudia skubis
+        </p>
+      </div>
     </div>
-
-    <div className="max-w-[900px] w-full h-[1px] bg-[rgba(160,160,160,.2)]" />
   </div>
 );

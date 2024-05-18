@@ -16,8 +16,15 @@ const { pageDescription } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <ViewTransitions />
+
+    <style>
+      @font-face {
+        font-family: 'FSRome';
+        src: url('/fonts/EUR42.otf') format('opentype');
+      }
+    </style>
   </head>
-  <body class="flex flex-col h-full min-h-screen">
+  <body class="flex flex-col h-full min-h-screen overflow-x-hidden">
     <SuperHeader />
     <SiteHeader client:load />
     <main class="pb-8 flex-1">

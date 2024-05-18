@@ -20,7 +20,7 @@ export const Drawer = forwardRef<HTMLDivElement, Props>(
     return (
       <Portal>
         <ReactFocusLock returnFocus={false}>
-          <div className="fixed inset-0 p-4">
+          <div className="fixed inset-0 p-4 z-20">
             <div
               onClick={handleDismiss}
               className="absolute inset-0 bg-black/40 backdrop-blur-sm animate-fadeIn"
