@@ -14,7 +14,7 @@ export const INSTAGRAM_ACCOUNT_NAME = '@_Estetic_Hair_Studio';
 
 export const INSTAGRAM_ACCOUNT_HREF = 'https://www.instagram.com/_Estetic_Hair_Studio/';
 
-export const CONTACT_PHONE_NUMBER = '533-493-531';
+export const CONTACT_PHONE_NUMBER = '535-493-531';
 
 export const CONTACT_EMAIL = 'skubisklaudia@icloud.com';
 
